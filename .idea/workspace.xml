@@ -1,24 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4116b76-decc-4c34-a4a1-feccefb8a3ef" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/DjangoProject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="f4116b76-decc-4c34-a4a1-feccefb8a3ef" name="Changes" comment="lab1 ver2">
+      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/page1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/page2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/page3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/page4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopeasy/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopeasy/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;anzhelikkaa&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/anzhelikkaa/django.git&quot;,
+    &quot;accountId&quot;: &quot;427680fa-67b3-4a5b-a58f-2609245f28db&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2unnuV1SSyUAPnreqxPhcnCDThH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -27,10 +54,17 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Django Server.DjangoProject.executor": "Run",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -43,6 +77,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="shopeasy.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -77,11 +112,35 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1742893431800</updated>
-      <workItem from="1742893433893" duration="378000" />
+      <workItem from="1742893433893" duration="807000" />
+      <workItem from="1743491362059" duration="1502000" />
+      <workItem from="1744054729578" duration="5049000" />
     </task>
+    <task id="LOCAL-00001" summary="lab1">
+      <option name="closed" value="true" />
+      <created>1742893848688</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1742893848688</updated>
+    </task>
+    <task id="LOCAL-00002" summary="lab1 ver2">
+      <option name="closed" value="true" />
+      <created>1742893953493</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1742893953493</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="lab1" />
+    <MESSAGE value="lab1 ver2" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab1 ver2" />
   </component>
 </project>
