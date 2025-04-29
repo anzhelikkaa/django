@@ -2,11 +2,11 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Сторінка 2</title>
+    <title>{{ title }}</title>
 </head>
 <body>
-    <h1>Це Сторінка 2</h1>
-    <p>Вміст сторінки 2.</p>
-    <a href="{% url 'index' %}">← Назад на головну</a>
+    <h1>{{ title }}</h1>
+    <p>Це контент сторінки 2</p>
+    <a href="{% url 'index' %}">← На головну</a>
 </body>
 </html>

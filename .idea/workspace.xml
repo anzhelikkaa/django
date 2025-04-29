@@ -4,8 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4116b76-decc-4c34-a4a1-feccefb8a3ef" name="Changes" comment="lab1 ver2">
+    <list default="true" id="f4116b76-decc-4c34-a4a1-feccefb8a3ef" name="Changes" comment="lab1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopeasy/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopeasy/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopeasy/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shopeasy/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/page1.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/page1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/page2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/page2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/page3.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/page3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/page4.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/page4.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,23 +57,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Django Server.DjangoProject.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Merging master",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django Server.DjangoProject.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR_AND_PREVIEW&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ADMIN\PycharmProjects\DjangoProject\templates" />
@@ -114,6 +126,23 @@
       <workItem from="1742893433893" duration="807000" />
       <workItem from="1743491362059" duration="1502000" />
       <workItem from="1744054729578" duration="5162000" />
+      <workItem from="1744069573237" duration="394000" />
+      <workItem from="1744069996937" duration="361000" />
+      <workItem from="1744701455333" duration="980000" />
+      <workItem from="1744705939663" duration="1145000" />
+      <workItem from="1744707163925" duration="295000" />
+      <workItem from="1744707490525" duration="238000" />
+      <workItem from="1744871979680" duration="262000" />
+      <workItem from="1744958947328" duration="1048000" />
+      <workItem from="1745272559834" duration="253000" />
+      <workItem from="1745272847937" duration="1729000" />
+      <workItem from="1745307503219" duration="890000" />
+      <workItem from="1745308430797" duration="1215000" />
+      <workItem from="1745870001848" duration="2293000" />
+      <workItem from="1745872494622" duration="382000" />
+      <workItem from="1745872905793" duration="612000" />
+      <workItem from="1745873549406" duration="2667000" />
+      <workItem from="1745910509752" duration="659000" />
     </task>
     <task id="LOCAL-00001" summary="lab1">
       <option name="closed" value="true" />
@@ -139,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744069421590</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="lab1 ver2">
+      <option name="closed" value="true" />
+      <created>1744069615006</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1744069615006</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
