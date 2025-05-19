@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Кошик{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">Ваш кошик</h2>
+
+    {% if products %}
+        <div class="list-group mb-4">
+            {% for product in products %}
+                <div class="list-group-item d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5 class="mb-1">{{ product.name }}</h5>
+                        <small>{{ product.price }} ₴</small>
+                    </div>
+                    <div>
+                        <a href="{% url 'remove_from_cart' product.pk %}" class="btn btn-sm btn-outline-danger">
+                            Видалити
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center">
+            <h4>Разом: {{ total }} ₴</h4>
+            <div>
+                <a href="{% url 'checkout' %}" class="btn btn-success me-2">Оформити замовлення</a>
+                <a href="{% url 'index' %}" class="btn btn-outline-secondary">← Назад до магазину</a>
+            </div>
+        </div>
+    {% else %}
+        <p>Кошик порожній. <a href="{% url 'index' %}">Перейти до магазину</a></p>
+    {% endif %}
+</div>
+{% endblock %}

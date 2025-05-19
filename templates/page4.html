@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ title }}</title>
-</head>
-<body>
-    <h1>{{ title }}</h1>
-    <p>Це контент сторінки 4</p>
-    <a href="{% url 'index' %}">← На головну</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Сторінка 1{% endblock %}
+
+{% block content %}
+<h2>{{ title }}</h2>
+<p>Це контент сторінки 4</p>
+<a href="{% url 'index' %}">← На головну</a>
+{% endblock %}

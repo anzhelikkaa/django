@@ -1,12 +1,20 @@
 from django.contrib import admin
 from django.urls import path
-from myapp import views  # якщо твій додаток називається main
+from myapp import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('page1/', views.page1, name='page1'),
-    path('page2/', views.page2, name='page2'),
-    path('page3/', views.page3, name='page3'),
-    path('page4/', views.page4, name='page4'),
+    path('product/<int:pk>/', views.product_detail, name='product_detail'),
+    path('category/<int:pk>/', views.category_detail, name='category_detail'),
+    path('checkout/', views.checkout, name='checkout'),  # БЕЗ <pk>
+    path('cart/', views.cart_view, name='cart'),
+    path('add-to-cart/<int:pk>/', views.add_to_cart, name='add_to_cart'),
+    path('remove-from-cart/<int:pk>/', views.remove_from_cart, name='remove_from_cart'),
+
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

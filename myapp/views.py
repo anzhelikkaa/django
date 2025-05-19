@@ -1,33 +1,63 @@
-from django.shortcuts import render
-from django.urls import reverse
+from .models import Product, Category, Order
+from django.shortcuts import render, redirect, get_object_or_404
+from .forms import OrderForm
 
 def index(request):
-    links = [
-        ('Сторінка 1', reverse('page1')),
-        ('Сторінка 2', reverse('page2')),
-        ('Сторінка 3', reverse('page3')),
-        ('Сторінка 4', reverse('page4')),
-    ]
-    context = {
-        'title': 'Головна сторінка',
-        'links': links
-    }
-    return render(request, 'index.html', context=context)
+    category_id = request.GET.get('category')
+    categories = Category.objects.all()
+    selected_category = None
 
-def page_template(request, name):
-    context = {
-        'title': name
-    }
-    return render(request, 'page.html', context=context)
+    if category_id:
+        selected_category = get_object_or_404(Category, pk=category_id)
+        products = Product.objects.filter(category=selected_category)
+    else:
+        products = Product.objects.all()
 
-def page1(request):
-    return render(request, 'page1.html', {'title': 'Сторінка 1'})
+    return render(request, 'index.html', {
+        'products': products,
+        'categories': categories,
+        'selected_category': selected_category
+    })
+def product_detail(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    return render(request, 'product_detail.html', {'product': product})
+def category_detail(request, pk):
+    category = get_object_or_404(Category, pk=pk)
+    products = category.products.all()
+    return render(request, 'category_detail.html', {'category': category, 'products': products})
+def add_to_cart(request, pk):
+    cart = request.session.get('cart', [])
+    if pk not in cart:
+        cart.append(pk)
+        request.session['cart'] = cart
+    return redirect('cart')
 
-def page2(request):
-    return render(request, 'page2.html', {'title': 'Сторінка 2'})
+def remove_from_cart(request, pk):
+    cart = request.session.get('cart', [])
+    if pk in cart:
+        cart.remove(pk)
+        request.session['cart'] = cart
+    return redirect('cart')
 
-def page3(request):
-    return render(request, 'page3.html', {'title': 'Сторінка 3'})
+def cart_view(request):
+    cart_ids = request.session.get('cart', [])
+    products = Product.objects.filter(pk__in=cart_ids)
+    total = sum([p.price for p in products])
+    return render(request, 'cart.html', {'products': products, 'total': total})
+def checkout(request):
+    cart_ids = request.session.get('cart', [])
+    products = Product.objects.filter(pk__in=cart_ids)
 
-def page4(request):
-    return render(request, 'page4.html', {'title': 'Сторінка 4'})
+    if request.method == 'POST':
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            for product in products:
+                order = form.save(commit=False)
+                order.product = product
+                order.save()
+            request.session['cart'] = []  # Очистити кошик
+            return render(request, 'order_success.html', {'order': order})
+    else:
+        form = OrderForm()
+
+    return render(request, 'checkout.html', {'form': form, 'products': products})

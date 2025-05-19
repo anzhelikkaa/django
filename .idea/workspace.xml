@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4116b76-decc-4c34-a4a1-feccefb8a3ef" name="Changes" comment="lab1">
+    <list default="true" id="f4116b76-decc-4c34-a4a1-feccefb8a3ef" name="Changes" comment="lab5">
+      <change afterPath="$PROJECT_DIR$/myapp/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/cart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/category_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/checkout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/order_success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/product_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/admin.py" afterDir="false" />
@@ -26,6 +35,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Script" />
         <option value="HTML File" />
       </list>
     </option>
@@ -77,6 +87,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ADMIN\PycharmProjects\DjangoProject\myapp" />
       <recent name="C:\Users\ADMIN\PycharmProjects\DjangoProject\templates" />
     </key>
   </component>
@@ -142,7 +153,14 @@
       <workItem from="1745872494622" duration="382000" />
       <workItem from="1745872905793" duration="612000" />
       <workItem from="1745873549406" duration="2667000" />
-      <workItem from="1745910509752" duration="659000" />
+      <workItem from="1745910509752" duration="3281000" />
+      <workItem from="1745964331755" duration="832000" />
+      <workItem from="1746515319100" duration="1581000" />
+      <workItem from="1746516952309" duration="3726000" />
+      <workItem from="1746995251744" duration="3084000" />
+      <workItem from="1747084711288" duration="3075000" />
+      <workItem from="1747120385318" duration="17811000" />
+      <workItem from="1747421910719" duration="1882000" />
     </task>
     <task id="LOCAL-00001" summary="lab1">
       <option name="closed" value="true" />
@@ -176,7 +194,23 @@
       <option name="project" value="LOCAL" />
       <updated>1744069615006</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="lab5">
+      <option name="closed" value="true" />
+      <created>1745911456171</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1745911456171</updated>
+    </task>
+    <task id="LOCAL-00006" summary="lab5">
+      <option name="closed" value="true" />
+      <created>1745911486367</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1745911486367</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,6 +219,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lab1" />
     <MESSAGE value="lab1 ver2" />
-    <option name="LAST_COMMIT_MESSAGE" value="lab1 ver2" />
+    <MESSAGE value="lab5" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab5" />
   </component>
 </project>

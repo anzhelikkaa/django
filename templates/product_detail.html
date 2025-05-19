@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}{{ product.name }}{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-fluid rounded shadow-sm">
+    </div>
+    <div class="col-md-6">
+        <h2>{{ product.name }}</h2>
+        <p class="text-muted">{{ product.brand }} — {{ product.warranty_years }} р. гарантії</p>
+        <p>{{ product.description }}</p>
+        <h4 class="text-primary">{{ product.price }} ₴</h4>
+
+        {% if product.available %}
+            <span class="badge bg-success">В наявності</span>
+        {% else %}
+            <span class="badge bg-danger">Немає</span>
+        {% endif %}
+
+        <div class="mt-3 d-flex flex-column gap-2">
+            <a href="{% url 'add_to_cart' product.pk %}" class="btn btn-success">У кошик</a>
+            <a href="{% url 'cart' %}" class="btn btn-outline-primary">Перейти в кошик</a>
+            <a href="{% url 'index' %}" class="btn btn-outline-secondary">← Назад</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,29 +1,8 @@
 {% extends "base.html" %}
-{% load static %}
-{% block title %}{{ selected_category.name|default:"Головна" }}{% endblock %}
-
+{% block title %}{{ category.name }}{% endblock %}
 {% block content %}
+<h2 class="mb-4">Категорія: {{ category.name }}</h2>
 
-<h2 class="text-center mb-4">
-    {% if selected_category %}
-        Категорія: {{ selected_category.name }}
-    {% else %}
-        Всі товари
-    {% endif %}
-</h2>
-
-<!-- Категорії -->
-<div class="mb-4 text-center">
-    <h5>Категорії</h5>
-    <a href="{% url 'index' %}" class="btn btn-outline-secondary btn-sm {% if not selected_category %}active{% endif %}">Усі</a>
-    {% for cat in categories %}
-        <a href="?category={{ cat.pk }}" class="btn btn-outline-dark btn-sm {% if selected_category and selected_category.pk == cat.pk %}active{% endif %}">
-            {{ cat.name }}
-        </a>
-    {% endfor %}
-</div>
-
-<!-- Товари -->
 <div class="row g-4">
     {% for product in products %}
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -36,16 +15,13 @@
                     {% endif %}
                     <div class="card-body">
                         <h5 class="card-title">{{ product.name }}</h5>
-                        <p class="card-text text-muted">{{ product.brand }}</p>
                         <p class="card-text text-truncate">{{ product.description }}</p>
                         <h6 class="fw-bold text-primary">{{ product.price }} ₴</h6>
                     </div>
                 </div>
             </a>
         </div>
-    {% empty %}
-        <p class="text-center">Немає товарів у цій категорії.</p>
     {% endfor %}
 </div>
-
+<a href="{% url 'index' %}" class="btn btn-outline-secondary mt-4">← На головну</a>
 {% endblock %}
