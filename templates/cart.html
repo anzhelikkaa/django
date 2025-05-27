@@ -1,36 +1,111 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% block title %}Кошик{% endblock %}
-
 {% block content %}
-<div class="container">
-    <h2 class="mb-4">Ваш кошик</h2>
+<div class="container my-5">
+    <h2 class="text-center mb-4">🛒 Ваш кошик</h2>
 
-    {% if products %}
-        <div class="list-group mb-4">
-            {% for product in products %}
-                <div class="list-group-item d-flex justify-content-between align-items-center">
-                    <div>
-                        <h5 class="mb-1">{{ product.name }}</h5>
-                        <small>{{ product.price }} ₴</small>
-                    </div>
-                    <div>
-                        <a href="{% url 'remove_from_cart' product.pk %}" class="btn btn-sm btn-outline-danger">
-                            Видалити
-                        </a>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
+    {% if cart_items %}
+    <table class="table table-hover align-middle text-center shadow-sm">
+        <thead class="table-light">
+            <tr>
+                <th>Товар</th>
+                <th>Кількість</th>
+                <th>Ціна</th>
+                <th>Сума</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in cart_items %}
+            <tr class="{% if not item.available %}table-danger text-muted{% endif %}">
+                <td class="text-start">
+                    <strong>{{ item.product.name }}</strong>
+                    {% if item.product.stock == 0 %}
+                        <div><span class="badge bg-danger mt-1">Немає в наявності</span></div>
+                    {% endif %}
+                </td>
+                <td>
+                    {% if item.product.stock > 0 %}
+                        <input type="number"
+                               name="quantity_{{ item.product.pk }}"
+                               value="{{ item.quantity }}"
+                               min="1"
+                               max="{{ item.product.stock }}"
+                               class="form-control form-control-sm text-center">
+                        {% if item.quantity > item.product.stock %}
+                            <div class="text-danger small mt-1">
+                                В наявності: {{ item.product.stock }} шт.
+                            </div>
+                        {% endif %}
+                    {% else %}
+                        <div class="text-danger small">Немає в наявності</div>
+                    {% endif %}
+                </td>
+                <td>{{ item.product.price }} ₴</td>
+                <td>{{ item.subtotal|floatformat:2 }} ₴</td>
+                <td>
+                    <a href="{% url 'remove_from_cart' item.product.pk %}" class="btn btn-sm btn-outline-danger" title="Видалити">
+                        <i class="bi bi-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
-        <div class="d-flex justify-content-between align-items-center">
-            <h4>Разом: {{ total }} ₴</h4>
-            <div>
-                <a href="{% url 'checkout' %}" class="btn btn-success me-2">Оформити замовлення</a>
-                <a href="{% url 'index' %}" class="btn btn-outline-secondary">← Назад до магазину</a>
-            </div>
+    <div class="d-flex justify-content-between align-items-center mt-4">
+        <h5 class="mb-0">Разом: <strong>{{ total|floatformat:2 }} ₴</strong></h5>
+        <div class="d-flex gap-2">
+            {% if allow_checkout %}
+                <a href="{% url 'checkout' %}" class="btn btn-success">Оформити замовлення</a>
+            {% else %}
+                <button class="btn btn-secondary" disabled>Не всі товари доступні</button>
+            {% endif %}
         </div>
+    </div>
     {% else %}
-        <p>Кошик порожній. <a href="{% url 'index' %}">Перейти до магазину</a></p>
+    <div class="text-center py-5">
+        <div class="mb-4">
+            <i class="bi bi-cart-x" style="font-size: 4rem; color: #dee2e6;"></i>
+        </div>
+        <h4 class="text-muted mb-2">Ваш кошик порожній</h4>
+        <p class="text-secondary">Додайте товари до кошика, щоб зробити замовлення.</p>
+        <a href="{% url 'index' %}" class="btn btn-outline-primary mt-3">
+            Перейти до покупок
+        </a>
+    </div>
     {% endif %}
+
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('input[type="number"]').forEach(input => {
+        input.addEventListener('change', function () {
+            const productId = this.name.split('_')[1];
+            const quantity = this.value;
+
+            fetch("{% url 'update_cart_ajax' %}", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}',
+                },
+                body: JSON.stringify({
+                    product_id: productId,
+                    quantity: quantity
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    location.reload();
+                } else {
+                    alert(data.message || "Помилка оновлення");
+                }
+            });
+        });
+    });
+});
+</script>
 {% endblock %}

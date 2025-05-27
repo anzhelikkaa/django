@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}{{ selected_category.name|default:"Головна" }}{% endblock %}
-
 {% block content %}
 
 <h2 class="text-center mb-4">
@@ -30,7 +29,10 @@
             <a href="{% url 'product_detail' product.pk %}" class="text-decoration-none text-dark">
                 <div class="card h-100 shadow-sm">
                     {% if product.image %}
-                        <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                  <div class="product-image-container ratio ratio-4x3">
+                      <img src="{{ product.image.url }}" class="product-image img-fluid object-fit-contain" alt="{{ product.name }}">
+                  </div>
+
                     {% else %}
                         <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="no image">
                     {% endif %}

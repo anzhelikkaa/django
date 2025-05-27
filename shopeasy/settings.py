@@ -58,7 +58,7 @@ ROOT_URLCONF = 'shopeasy.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
+        'DIRS': [BASE_DIR / 'myapp/../myapp/../templates']
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -130,3 +130,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
